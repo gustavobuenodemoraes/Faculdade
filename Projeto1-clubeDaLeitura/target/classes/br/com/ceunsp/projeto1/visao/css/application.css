@@ -26,3 +26,12 @@
 	-fx-font-weight: bold; 
 	-fx-text-fill: #333333;
 }
+#radio{
+	-fx-padding: 10px;
+	-fx-font-size: 12px; 
+	-fx-font-weight: bold; 
+	-fx-text-fill: #333333;
+}
+#textfield:hover{
+	-fx-border-color: #990000;
+}

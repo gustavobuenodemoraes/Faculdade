@@ -11,38 +11,34 @@
 <?import be.com.ceunsp.projeto1.validation.AnoTextFild?>
 <?import be.com.ceunsp.projeto1.validation.NumberTextFild?>
 
-<GridPane fx:controller="br.com.ceunsp.projeto1.controller.CadastroRevistaController"
+<GridPane fx:controller="br.com.ceunsp.projeto1.controller.CadastroCaixaController"
 	xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10"
 	vgap="10">
 	<padding>
 		<Insets top="25" right="25" bottom="10" left="25" />
 	</padding>
 
-	<Label id="titulo" text="Cadastro de Revistas" 
-		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+	<Label id="titulo" text="Cadastro de Caixa" GridPane.columnIndex="0"
+		GridPane.rowIndex="0" GridPane.columnSpan="2" />
 
-	<Label text="Nome da coleção: " GridPane.columnIndex="0"
+	<Label text="Numero da Caixa: " GridPane.columnIndex="0"
 		GridPane.rowIndex="3" />
-	<TextField fx:id="tfColecao" GridPane.columnIndex="1"
-		GridPane.rowIndex="3" id="textfield"/>
+	<NumberTextFild fx:id="tfNumeroCaixa"
+		GridPane.columnIndex="1" GridPane.rowIndex="3" id="textfield"/>
 
-	<Label text="Numero da edição: " GridPane.columnIndex="0"
+	<Label text="Cor da caixa: " GridPane.columnIndex="0"
 		GridPane.rowIndex="4" />
-	<NumberTextFild fx:id="tfEdicao" GridPane.columnIndex="1"
+	<TextField fx:id="tfCorcaixa" GridPane.columnIndex="1"
 		GridPane.rowIndex="4" id="textfield"/>
 
-	<Label text="Ano: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
-	<AnoTextFild fx:id="tfAno" GridPane.columnIndex="1"
+	<Label text="Etiqueta da Caixa: " GridPane.columnIndex="0"
+		GridPane.rowIndex="5" />
+	<TextField fx:id="tfEtiquetaCaixa" GridPane.columnIndex="1"
 		GridPane.rowIndex="5" id="textfield"/>
-
-	<Label text="Caixa: " GridPane.columnIndex="0" GridPane.rowIndex="6" />
-	<ComboBox fx:id="cbCaixa" GridPane.columnIndex="1"
-		GridPane.rowIndex="6" id="textfield">
-	</ComboBox>
 
 	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
 		GridPane.columnSpan="2" GridPane.rowIndex="9">
-		<Button text="Cadastrar" onAction="#salvar"/>
+		<Button text="Cadastrar" onAction="#salvar" />
 	</HBox>
 </GridPane>
 

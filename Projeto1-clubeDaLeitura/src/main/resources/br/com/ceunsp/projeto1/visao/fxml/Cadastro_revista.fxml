@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <?import be.com.ceunsp.projeto1.validation.AnoTextFild?>
+<?import be.com.ceunsp.projeto1.validation.NumberTextFild?>
 
 <GridPane fx:controller="br.com.ceunsp.projeto1.controller.CadastroRevistaController"
 	xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10"
@@ -23,20 +24,20 @@
 	<Label text="Nome da coleção: " GridPane.columnIndex="0"
 		GridPane.rowIndex="3" />
 	<TextField fx:id="tfColecao" GridPane.columnIndex="1"
-		GridPane.rowIndex="3" />
+		GridPane.rowIndex="3" id="textfield"/>
 
 	<Label text="Numero da edição: " GridPane.columnIndex="0"
 		GridPane.rowIndex="4" />
-	<TextField fx:id="tfEdicao" GridPane.columnIndex="1"
-		GridPane.rowIndex="4" />
+	<NumberTextFild fx:id="tfEdicao" GridPane.columnIndex="1"
+		GridPane.rowIndex="4" id="textfield"/>
 
 	<Label text="Ano: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
 	<AnoTextFild fx:id="tfAno" GridPane.columnIndex="1"
-		GridPane.rowIndex="5" />
+		GridPane.rowIndex="5" id="textfield"/>
 
 	<Label text="Caixa: " GridPane.columnIndex="0" GridPane.rowIndex="6" />
 	<ComboBox fx:id="cbCaixa" GridPane.columnIndex="1"
-		GridPane.rowIndex="6">
+		GridPane.rowIndex="6" id="textfield">
 	</ComboBox>
 
 	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
