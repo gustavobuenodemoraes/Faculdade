@@ -7,20 +7,22 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class CadastroRevistaMain extends Application {
+public class AmiguinhoMain extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/Cadastro_revista.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("fxml/Amiguinho.fxml"));
 			
 			Scene scene = new Scene(root, 420, 350);
 			scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
-			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imgens/cadastro red.png")));//imagem
+			
+			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imgens/add usuario red.png")));//imagem
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Cadastro de revistas");
+			primaryStage.setTitle("Cadastro de Amiguinho");
 			primaryStage.setMaximized(false);
 			primaryStage.setResizable(false);
 			primaryStage.show();
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
