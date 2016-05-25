@@ -1,8 +1,0 @@
-
-import javafx.scene.layout.AnchorPane
-
-component amiguinho {
-	AnchorPane {
-		//TODO Add Nodes
-	}
-}
