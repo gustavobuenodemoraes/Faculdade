@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import be.com.ceunsp.projeto1.validation.AnoTextFild?>
+<?import be.com.ceunsp.projeto1.validation.NumberTextFild?>
+
+<GridPane fx:controller="br.com.ceunsp.projeto1.controller.CadastroCaixaController"
+	xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10"
+	vgap="10">
+	<padding>
+		<Insets top="25" right="25" bottom="10" left="25" />
+	</padding>
+
+	<Label id="titulo" text="Cadastro de Caixa" GridPane.columnIndex="0"
+		GridPane.rowIndex="0" GridPane.columnSpan="2" />
+
+	<Label text="Numero da Caixa: " GridPane.columnIndex="0"
+		GridPane.rowIndex="3" />
+	<NumberTextFild fx:id="tfNumeroCaixa"
+		GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+	<Label text="Cor da caixa: " GridPane.columnIndex="0"
+		GridPane.rowIndex="4" />
+	<TextField fx:id="tfCorcaixa" GridPane.columnIndex="1"
+		GridPane.rowIndex="4" />
+
+	<Label text="Etiqueta da Caixa: " GridPane.columnIndex="0"
+		GridPane.rowIndex="5" />
+	<TextField fx:id="tfEtiquetaCaixa" GridPane.columnIndex="1"
+		GridPane.rowIndex="5" />
+
+	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
+		GridPane.columnSpan="2" GridPane.rowIndex="9">
+		<Button text="Cadastrar" onAction="#salvar" />
+	</HBox>
+</GridPane>
+

@@ -1,0 +1,68 @@
+package br.com.ceunsp.projeto1.controller;
+
+import java.util.List;
+
+import br.com.ceunsp.projeto1.dao.AmiguinhoDAO;
+import br.com.ceunsp.projeto1.dao.RevistaDAO;
+import br.com.ceunsp.projeto1.modelo.Amiguinho;
+import br.com.ceunsp.projeto1.modelo.Revista;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import tabelas.TabelaAmiguinho;
+import tabelas.TabelaRevistas;
+
+public class ListagemAmiguinhoController {
+	@FXML
+	private TableView<TabelaAmiguinho> tabela;
+	@FXML
+	private TableColumn<TabelaAmiguinho, String> nome;
+	@FXML
+	private TableColumn<TabelaAmiguinho, String> nomeMae;
+	@FXML
+	private TableColumn<TabelaAmiguinho, String> telefone;
+	@FXML
+	private TableColumn<TabelaAmiguinho, String> local;
+
+	private List<Amiguinho> amiguinhos = getAmiguinho();
+
+	private ObservableList<TabelaAmiguinho> list = FXCollections.observableArrayList();
+
+	@FXML
+	public void initialize() {
+		// populando
+		for (Amiguinho amiguinho : amiguinhos) {
+			String local;
+			if(amiguinho.getLocal() == 'e'){
+				local = "escola";
+			}else if(amiguinho.getLocal() == 'p'){
+				local = "predio";
+			}
+			TabelaRevistas tabelaRevistas = new TabelaRevistas(amiguinho.getNome(), amiguinho.getNomeMae(),
+					amiguinho.getTelefone(), amiguinho.());
+			list.add(tabelaRevistas);
+		}
+
+		// colunas
+		colecao.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, String>("Colecao"));
+		ano.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, String>("Ano"));
+		caixa.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, String>("Caixa"));
+		edicao.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, Long>("Edicao"));
+
+		tabela.setItems(list);
+	}
+
+	public List<Amiguinho> getAmiguinho() {
+		try {
+			AmiguinhoDAO dao = new AmiguinhoDAO();
+			return dao.listar();
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+			throw e;
+		}
+	}
+
+}
