@@ -88,7 +88,10 @@ public class Amiguinho {
 			return false;
 		return true;
 	}
-	
+	@Override
+	public String toString() {
+		return nome;
+	}
 	
 	
 }

@@ -1,0 +1,9 @@
+package br.com.ceunsp.projeto1.controller;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.ToggleGroup;
+
+public class AmiguinhoController {
+	@FXML
+	ToggleGroup toggle;
+}
