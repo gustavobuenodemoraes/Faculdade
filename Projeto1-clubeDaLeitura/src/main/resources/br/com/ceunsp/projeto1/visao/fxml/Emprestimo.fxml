@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import br.com.ceunsp.projeto1.validation.AnoTextFild?>
+<?import br.com.ceunsp.projeto1.validation.NumberTextFild?>
+<?import javafx.scene.control.DatePicker?>
+
+<GridPane fx:controller="br.com.ceunsp.projeto1.controller.EmprestimoController"
+	xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10"
+	vgap="10">
+	<padding>
+		<Insets top="25" right="25" bottom="10" left="25" />
+	</padding>
+
+	<Label id="titulo" text="Cadastro de Revistas"
+		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+
+
+
+	<Label text="Amiguinho: " GridPane.columnIndex="0"
+		GridPane.rowIndex="4" />
+	<ComboBox fx:id="cbAmiguinho" GridPane.columnIndex="1"
+		GridPane.rowIndex="4">
+	</ComboBox>
+
+	<Label text="Revista: " GridPane.columnIndex="0"
+		GridPane.rowIndex="5" />
+	<ComboBox fx:id="cbRevista" GridPane.columnIndex="1"
+		GridPane.rowIndex="5">
+	</ComboBox>
+
+	<Label text="Data de devolução: " GridPane.columnIndex="0"
+		GridPane.rowIndex="6" />
+	<DatePicker fx:id="dtDevolucao" GridPane.columnIndex="1" GridPane.rowIndex="6"
+		editable="false" />
+
+
+	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
+		GridPane.columnSpan="2" GridPane.rowIndex="9">
+		<Button text="Emprestar" onAction="#salvar"/>
+	</HBox>
+</GridPane>
+

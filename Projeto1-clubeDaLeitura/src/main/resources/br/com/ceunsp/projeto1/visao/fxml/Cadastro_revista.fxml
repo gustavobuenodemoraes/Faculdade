@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import br.com.ceunsp.projeto1.validation.AnoTextFild?>
+<?import br.com.ceunsp.projeto1.validation.NumberTextFild?>
+<GridPane fx:controller="br.com.ceunsp.projeto1.controller.CadastroRevistaController"
+	xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10"
+	vgap="10">
+	<padding>
+		<Insets top="25" right="25" bottom="10" left="25" />
+	</padding>
+
+	<Label id="titulo" text="Cadastro de Revistas" 
+		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+
+	<Label text="Nome da coleção: " GridPane.columnIndex="0"
+		GridPane.rowIndex="3" />
+	<TextField fx:id="tfColecao" GridPane.columnIndex="1"
+		GridPane.rowIndex="3" id="textfield"/>
+
+	<Label text="Numero da edição: " GridPane.columnIndex="0"
+		GridPane.rowIndex="4" />
+	<NumberTextFild  fx:id="tfEdicao" GridPane.columnIndex="1"
+		GridPane.rowIndex="4" />
+
+	<Label text="Ano: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
+	<AnoTextFild  fx:id="tfAno" GridPane.columnIndex="1"
+		GridPane.rowIndex="5" />
+	<NumberTextFild fx:id="tfEdicao" GridPane.columnIndex="1"
+		GridPane.rowIndex="4" id="textfield"/>
+
+	<Label text="Ano: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
+	<AnoTextFild fx:id="tfAno" GridPane.columnIndex="1"
+		GridPane.rowIndex="5" id="textfield"/>
+	<Label text="Caixa: " GridPane.columnIndex="0" GridPane.rowIndex="6" />
+	<ComboBox fx:id="cbCaixa" GridPane.columnIndex="1"
+		GridPane.rowIndex="6" id="textfield">
+	</ComboBox>
+
+	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
+		GridPane.columnSpan="2" GridPane.rowIndex="9">
+		<Button text="Cadastrar" onAction="#salvar"/>
+	</HBox>
+</GridPane>
+
