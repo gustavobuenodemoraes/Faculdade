@@ -14,6 +14,7 @@
 		<Insets top="25" right="25" bottom="10" left="25" />
 	</padding>
 
+<<<<<<< HEAD
 	<Label id="titulo" text="Revistas"
 		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
 
@@ -27,6 +28,22 @@
 			<TableColumn fx:id="caixa" text="Caixa">
 			</TableColumn>
 			<TableColumn fx:id="edicao" text="Edição">
+=======
+	<Label id="titulo" text="Cadastro de Revistas"
+		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+
+	<TableView fx:id="tabela" id="tabela"
+		GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2"
+		editable="false">
+		<columns>
+			<TableColumn fx:id="colecao" text="Coleção" id="colecao">
+			</TableColumn>
+				<TableColumn fx:id="ano" text="Ano">
+			</TableColumn>
+				<TableColumn fx:id="caixa" text="Caixa">
+			</TableColumn>
+				<TableColumn fx:id="edicao" text="Edição">
+>>>>>>> 06897fa08e3fcc0c2ad2b1af5e4b7b89d8312df3
 			</TableColumn>
 		</columns>
 	</TableView>

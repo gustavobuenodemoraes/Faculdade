@@ -15,8 +15,9 @@ public class CadastroCaixaMain extends Application {
 			
 			Scene scene = new Scene(root, 420, 350);
 			scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
-			
-			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imgens/caixa vermelha.png")));//imagem
+
+			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imagens/caixavermelha.png")));//imagem
+
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Cadastro Caixa");
 			primaryStage.setMaximized(false);

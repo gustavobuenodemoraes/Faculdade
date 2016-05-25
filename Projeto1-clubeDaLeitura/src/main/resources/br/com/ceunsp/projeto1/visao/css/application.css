@@ -32,6 +32,7 @@
 	-fx-font-weight: bold; 
 	-fx-text-fill: #333333;
 }
+/*cadastro amiguinho */
 #radio{
 	-fx-padding: 10px;
 	-fx-font-size: 12px; 
@@ -40,4 +41,23 @@
 }
 #textfield:hover{
 	-fx-border-color: #990000;
+}/*todos os cadastros*/
+/*amiguinho css */
+#tabelaamiguinho{
+	-fx-min-width: 340px;
+}
+/*revista */
+#tabelarevista{
+	-fx-min-width: 170px;
+}/*revista/caixa */
+#tabela{
+	-fx-min-width: 450px;
+}
+/*revista*/
+#colecao{
+	-fx-pref-width: 280px;
+}
+/*caixa */
+#caixacaixa{
+	-fx-pref-width: 180px;
 }

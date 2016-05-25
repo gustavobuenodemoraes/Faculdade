@@ -1,5 +1,6 @@
 package br.com.ceunsp.projeto1.dao;
 
+
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -70,5 +71,6 @@ public class EmprestimoDAO extends GenericDAO<Emprestimo> {
 			session.close();
 		}
 	}
-
 }
+
+

@@ -24,28 +24,24 @@ public class ListagemRevistaController {
 	@FXML
 	private TableColumn<TabelaRevistas, String> caixa;
 
-	
 	private List<Revista> revistas = getRevistas();
 
 	private ObservableList<TabelaRevistas> list = FXCollections.observableArrayList();
 
 	@FXML
 	public void initialize() {
-		//populando
+		// populando
 		for (Revista revista : revistas) {
-			
 			TabelaRevistas tabelaRevistas = new TabelaRevistas(revista.getColecao(), revista.getAno(),
 					revista.getCaixa().getEtiqueta(), revista.getNumeroEdicao());
 			list.add(tabelaRevistas);
 		}
-		
-		//colunas
+		// colunas
 		colecao.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, String>("Colecao"));
 		ano.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, String>("Ano"));
 		caixa.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, String>("Caixa"));
 		edicao.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, Long>("Edicao"));
 
-		
 		tabela.setItems(list);
 	}
 
