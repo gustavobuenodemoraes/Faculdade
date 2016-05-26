@@ -2,6 +2,12 @@
 .root{
 	-fx-background-color: #fff;
 }
+#tabela{
+	-fx-min-width: 450px;
+}
+#tabelaEmprestimo{
+	-fx-min-width: 650px;
+}
 #titulo{
 	-fx-padding: 0px,0px,0px,0px;
 	-fx-font-size: 26px; 
@@ -33,10 +39,9 @@
 	-fx-font-weight: bold; 
 	-fx-text-fill: #333333;
 }
-/*todos os cadastros*/
 #textfield:hover{
 	-fx-border-color: #990000;
-}
+}/*todos os cadastros*/
 /*amiguinho css */
 #tabelaamiguinho{
 	-fx-min-width: 340px;
@@ -47,6 +52,7 @@
 }/*revista/caixa */
 #tabela{
 	-fx-min-width: 450px;
+	-fx-border-color: #990000;
 }
 /*revista*/
 #colecao{

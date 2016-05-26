@@ -8,8 +8,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
-<?import be.com.ceunsp.projeto1.validation.AnoTextFild?>
-<?import be.com.ceunsp.projeto1.validation.NumberTextFild?>
+<?import br.com.ceunsp.projeto1.validation.AnoTextFild?>
+<?import br.com.ceunsp.projeto1.validation.NumberTextFild?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.ToggleGroup?>

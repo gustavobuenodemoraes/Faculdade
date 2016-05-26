@@ -1,4 +1,4 @@
-package be.com.ceunsp.projeto1.validation;
+package br.com.ceunsp.projeto1.validation;
 
 import javafx.scene.control.TextField;
 

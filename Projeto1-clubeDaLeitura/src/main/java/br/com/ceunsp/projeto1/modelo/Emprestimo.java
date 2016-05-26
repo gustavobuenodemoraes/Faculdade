@@ -14,34 +14,37 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Emprestimo {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date dataEmprestimo;
-	
+
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date dataDevolucao;
-	
+
+	@Column()
+	@Temporal(TemporalType.DATE)
+	private Date dataDevolucaoFinal;
+
 	@ManyToOne
 	@JoinColumn(nullable = false)
 	private Amiguinho amiguinho;
-	
+
 	@ManyToOne
 	@JoinColumn(nullable = false)
-	private Revista resvista;
-	
+	private Revista revista;
 	@Column
 	private Boolean entregue;
 
 	public Emprestimo() {
 		entregue = false;
 	}
-		
+
 	public Amiguinho getAmiguinho() {
 		return amiguinho;
 	}
@@ -50,12 +53,13 @@ public class Emprestimo {
 		this.amiguinho = amiguinho;
 	}
 
-	public Revista getResvista() {
-		return resvista;
+	public Revista getRevista() {
+		return revista;
 	}
 
-	public void setResvista(Revista resvista) {
-		this.resvista = resvista;
+	public void setRevista(Revista resvista) {
+		this.revista = resvista;
+
 	}
 
 	public Date getDataEmprestimo() {
@@ -98,6 +102,10 @@ public class Emprestimo {
 			return false;
 		return true;
 	}
+	@Override
+	public String toString() {
+		return amiguinho.getNome() + " - " + revista.getColecao();
+	}
 
 	public Long getId() {
 		return id;
@@ -114,6 +122,17 @@ public class Emprestimo {
 	public void setEntregue(Boolean entregue) {
 		this.entregue = entregue;
 	}
-	
-	
+
+	public Date getDataDevolucaoFinal() {
+		return dataDevolucaoFinal;
+	}
+
+	public void setDataDevolucaoFinal(Date dataDevolucaoFinal) {
+		this.dataDevolucaoFinal = dataDevolucaoFinal;
+	}
+
+	public Boolean getEntregue() {
+		return entregue;
+	}
+
 }

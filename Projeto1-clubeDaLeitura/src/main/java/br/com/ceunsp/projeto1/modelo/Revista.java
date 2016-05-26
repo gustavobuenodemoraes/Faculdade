@@ -92,5 +92,8 @@ public class Revista {
 		return true;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return colecao + " - " + numeroEdicao;
+	}
 }

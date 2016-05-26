@@ -15,7 +15,9 @@ public class CadastroRevistaMain extends Application {
 			
 			Scene scene = new Scene(root, 420, 350);
 			scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
+
 			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imagens/cadastrored.png")));//imagem
+
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Cadastro de revistas");
 			primaryStage.setMaximized(false);

@@ -25,7 +25,7 @@ public class EmprestimoDAOTest {
 
 		RevistaDAO revistaDAO = new RevistaDAO();
 		Revista resvista = revistaDAO.findById(3L);
-		emprestimo.setResvista(resvista);
+		emprestimo.setRevista(resvista);
 
 		emprestimo.setDataEmprestimo(new Date());
 		emprestimo.setDataDevolucao(new Date());

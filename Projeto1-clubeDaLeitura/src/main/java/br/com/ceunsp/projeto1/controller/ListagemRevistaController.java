@@ -32,12 +32,10 @@ public class ListagemRevistaController {
 	public void initialize() {
 		// populando
 		for (Revista revista : revistas) {
-
 			TabelaRevistas tabelaRevistas = new TabelaRevistas(revista.getColecao(), revista.getAno(),
 					revista.getCaixa().getEtiqueta(), revista.getNumeroEdicao());
 			list.add(tabelaRevistas);
 		}
-
 		// colunas
 		colecao.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, String>("Colecao"));
 		ano.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, String>("Ano"));

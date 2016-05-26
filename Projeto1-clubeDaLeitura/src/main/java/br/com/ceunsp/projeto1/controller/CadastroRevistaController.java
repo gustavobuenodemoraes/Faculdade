@@ -58,14 +58,20 @@ public class CadastroRevistaController {
 			revista.setCaixa(cbCaixa.getValue());
 			RevistaDAO dao = new RevistaDAO();
 			dao.merge(revista);
+
+			LimparCampos();
+			AlertHelper.InfoAlert("Salvo", "Salvo com sucesso! ");
+
 		} catch (RuntimeException e) {
 			AlertHelper.ErrorAlert("Ops! ocorreu um erro", "Erro ao tentar salvar!");
 			e.printStackTrace();
 		}
 	}
 
-	public void validarCampos() {
-
+	public void LimparCampos() {
+		tfAno.setText("");
+		tfColecao.setText("");
+		tfEdicao.setText("");
 	}
 
 }
