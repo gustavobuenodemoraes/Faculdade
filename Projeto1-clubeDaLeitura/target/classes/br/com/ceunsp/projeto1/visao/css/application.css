@@ -32,8 +32,11 @@
 	-fx-font-weight: bold;
 	-fx-font-size: 20px;
 	-fx-background-color: #800000;
-	-fx-min-width: 30px;
-	-fx-min-height: 30px;
+	-fx-min-width: 120px;
+	-fx-min-height: 60px;
+    -fx-border-insets: 10px;
+    -fx-background-insets: 10px;
+	
 }
 #btnCrud:hover{
 	-fx-background-color: #cc0000;
