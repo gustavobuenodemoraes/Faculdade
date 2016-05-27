@@ -132,6 +132,7 @@ public class ListagemRevistaController {
 	public void popularTabela() {
 		// populando
 		for (Revista revista : revistas) {
+
 			TabelaRevistas tabelaRevistas = new TabelaRevistas(revista.getId(), revista.getColecao(), revista.getAno(),
 					revista.getCaixa().getEtiqueta(), revista.getNumeroEdicao());
 			list.add(tabelaRevistas);
