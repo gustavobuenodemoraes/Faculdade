@@ -48,7 +48,6 @@ public class ListagemRevistaController {
 	@FXML
 	public void initialize() {
 		popularTabela();
-		filtrarDados(tabela);
 	}
 
 	public List<Revista> getRevistas() {
@@ -144,6 +143,8 @@ public class ListagemRevistaController {
 		edicao.setCellValueFactory(new PropertyValueFactory<TabelaRevistas, Long>("Edicao"));
 
 		tabela.setItems(list);
+
+		filtrarDados(tabela);
 	}
 	public void filtrarDados(TableView<TabelaRevistas> tabela){
 		  // 1. Wrap the ObservableList in a FilteredList (initially display all data).
