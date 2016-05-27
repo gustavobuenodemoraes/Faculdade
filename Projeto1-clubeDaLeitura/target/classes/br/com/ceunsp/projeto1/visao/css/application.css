@@ -67,6 +67,7 @@
 }/*revista/caixa */
 #tabela{
 	-fx-min-width: 450px;
+	-fx-border-color: #990000;
 }
 /*revista*/
 #colecao{
