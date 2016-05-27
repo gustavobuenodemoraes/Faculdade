@@ -27,6 +27,18 @@
 .button:hover{
 	-fx-background-color: #cc0000;
 }
+#btnCrud{
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-background-color: #800000;
+	-fx-min-width: 30px;
+	-fx-min-height: 30px;
+}
+#btnCrud:hover{
+	-fx-background-color: #cc0000;
+	
+}
 .label{
 	-fx-font-size: 12px; 
 	-fx-font-weight: bold; 

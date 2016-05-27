@@ -14,7 +14,7 @@ public class ListagemRevistaMain extends Application{
 			Parent root = FXMLLoader.load(getClass().getResource("fxml/Listagem_revista.fxml"));
 
 
-			Scene scene = new Scene(root,500,350);
+			Scene scene = new Scene(root,500,550);
 			scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
 			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imagens/listaRevistared.png")));//imagem
 			primaryStage.setScene(scene);

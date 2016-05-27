@@ -6,6 +6,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 
 <GridPane fx:controller="br.com.ceunsp.projeto1.controller.ListagemRevistaController"
 	xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10"
@@ -14,12 +17,13 @@
 		<Insets top="25" right="25" bottom="10" left="25" />
 	</padding>
 
-<<<<<<< HEAD
-	<Label id="titulo" text="Revistas"
-		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+	<Label id="titulo" text="Revistas" GridPane.columnIndex="0"
+		GridPane.rowIndex="0" GridPane.columnSpan="2" />
 
-	<TableView fx:id="tabela" id="tabela" GridPane.rowIndex="1" 
-		GridPane.columnIndex="0" GridPane.columnSpan="2" editable="false" >
+	<TextField fx:id="tfPesquisar" GridPane.rowIndex="1" GridPane.columnSpan="2" promptText="Pesquisar"/>
+	
+	<TableView fx:id="tabela" id="tabela" GridPane.rowIndex="2"
+		GridPane.columnIndex="0" GridPane.columnSpan="2" editable="false">
 		<columns>
 			<TableColumn fx:id="colecao" text="Coleção">
 			</TableColumn>
@@ -28,24 +32,18 @@
 			<TableColumn fx:id="caixa" text="Caixa">
 			</TableColumn>
 			<TableColumn fx:id="edicao" text="Edição">
-=======
-	<Label id="titulo" text="Cadastro de Revistas"
-		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
-
-	<TableView fx:id="tabela" id="tabela"
-		GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2"
-		editable="false">
-		<columns>
-			<TableColumn fx:id="colecao" text="Coleção" id="colecao">
-			</TableColumn>
-				<TableColumn fx:id="ano" text="Ano">
-			</TableColumn>
-				<TableColumn fx:id="caixa" text="Caixa">
-			</TableColumn>
-				<TableColumn fx:id="edicao" text="Edição">
->>>>>>> 06897fa08e3fcc0c2ad2b1af5e4b7b89d8312df3
 			</TableColumn>
 		</columns>
 	</TableView>
+
+	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
+		GridPane.rowIndex="3">
+		
+		<Button fx:id="btnNovo" onAction="#novo" id="btnCrud" text="Novo"/>
+		<Button fx:id="btnEditar" onAction="#editar" id="btnCrud" text="Editar" />
+		<Button fx:id="btnExcluir" onAction="#excluir" id="btnCrud" text="Excluir" />
+		<Button fx:id="btnExcluir" onAction="#atualizar" id="btnCrud" text="Atualizar" />
+	</HBox>
+
 </GridPane>
 

@@ -37,6 +37,7 @@ public class CadastroRevistaController {
 		}
 	}
 
+
 	@FXML
 	public void salvar(ActionEvent event) {
 		try {
@@ -45,25 +46,46 @@ public class CadastroRevistaController {
 				AlertHelper.ErrorAlert("Ops! ocorreu um erro", "Por favor preencha todos os campos");
 				return;
 			}
-			
-			if(tfAno.getText().length() != 4){
+
+			if (tfAno.getText().length() != 4) {
 				AlertHelper.InfoAlert("Ops! Ano esta incorreto", "O ano informado esta incorreto use 4 digitos");
 				return;
 			}
-			
-			revista = new Revista();
-			revista.setAno(tfAno.getText());
-			revista.setColecao(tfColecao.getText());
-			revista.setNumeroEdicao(Long.parseLong(tfEdicao.getText()));
-			revista.setCaixa(cbCaixa.getValue());
-			RevistaDAO dao = new RevistaDAO();
-			dao.merge(revista);
+			if (revista == null) {
+				revista = new Revista();
+				revista.setAno(tfAno.getText());
+				revista.setColecao(tfColecao.getText());
+				revista.setNumeroEdicao(Long.parseLong(tfEdicao.getText()));
+				revista.setCaixa(cbCaixa.getValue());
+
+				RevistaDAO dao = new RevistaDAO();
+				dao.merge(revista);
+
+				LimparCampos();
+				AlertHelper.InfoAlert("Salvo", "Salvo com sucesso! ");
+			}else{
+				revista.setAno(tfAno.getText());
+				revista.setColecao(tfColecao.getText());
+				revista.setNumeroEdicao(Long.parseLong(tfEdicao.getText()));
+				revista.setCaixa(cbCaixa.getValue());
+
+				RevistaDAO dao = new RevistaDAO();
+				dao.merge(revista);
+
+				LimparCampos();
+				AlertHelper.InfoAlert("Salvo", "Salvo com sucesso! ");
+				revista = new Revista();
+			}
+
 
 			LimparCampos();
 			AlertHelper.InfoAlert("Salvo", "Salvo com sucesso! ");
 
 		} catch (RuntimeException e) {
 			AlertHelper.ErrorAlert("Ops! ocorreu um erro", "Erro ao tentar salvar!");
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -72,6 +94,15 @@ public class CadastroRevistaController {
 		tfAno.setText("");
 		tfColecao.setText("");
 		tfEdicao.setText("");
+		cbCaixa.setValue(null);
+	}
+
+	public void setRevista(Revista revista) {
+		this.revista = revista;
+		tfAno.setText(revista.getAno());
+		tfColecao.setText(revista.getColecao());
+		tfEdicao.setText(revista.getNumeroEdicao().toString());
+		cbCaixa.setValue(revista.getCaixa());
 	}
 
 }

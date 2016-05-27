@@ -85,5 +85,8 @@ public class EmprestimoController {
 
 	}
 	public void limparCampos(){
+		cbAmiguinho.setValue(null);
+		cbRevista.setValue(null);
+		dtDevolucao.setValue(null);
 	}
 }
