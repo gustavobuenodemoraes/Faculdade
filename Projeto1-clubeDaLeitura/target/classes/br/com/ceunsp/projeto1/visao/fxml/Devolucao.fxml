@@ -19,7 +19,7 @@
 		<Insets top="25" right="25" bottom="10" left="25" />
 	</padding>
 															
-	<Label id="titulo" text="Cadastro de Revistas"
+	<Label id="titulo" text="Devolucao de Revistas"
 		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
 
 	<Label text="Pendências: " GridPane.columnIndex="0"
