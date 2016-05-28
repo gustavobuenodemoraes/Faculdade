@@ -22,7 +22,7 @@
 
 	<TextField fx:id="tfPesquisar" GridPane.rowIndex="1" GridPane.columnSpan="2" promptText="Pesquisar"/>
 	
-	<TableView fx:id="tabela" id="tabela" GridPane.rowIndex="2"
+	<TableView fx:id="tabela" id="tabela" styleClass="table-view" GridPane.rowIndex="2"
 		GridPane.columnIndex="0" GridPane.columnSpan="2" editable="false">
 		<columns>
 			<TableColumn fx:id="colecao" text="Coleção">
