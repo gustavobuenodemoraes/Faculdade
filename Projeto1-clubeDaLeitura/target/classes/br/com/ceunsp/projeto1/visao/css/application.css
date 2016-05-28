@@ -56,7 +56,8 @@
 }
 #textfield:hover{
 	-fx-border-color: #990000;
-}/*todos os cadastros*/
+}
+/*todos os cadastros*/
 /*amiguinho css */
 #tabelaamiguinho{
 	-fx-min-width: 340px;
@@ -76,4 +77,29 @@
 /*caixa */
 #caixacaixa{
 	-fx-pref-width: 180px;
+}
+/*Tela principal */
+#menubar{
+	-fx-background-color: #f4f4f4;
+	-fx-font-size: 10px;
+	-fx-alignment: center ;
+}
+.menu:hover{
+	-fx-background-color: #800000;
+}
+
+#menuitem:hover{
+	-fx-background-color: #800000;
+}
+#botaomenu{
+	-fx-min-width: 40.0px;
+	-fx-min-height: 26.0px;
+	-fx-end-margin: 25.0;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 20.0px;
+	-fx-background-color: #999999;
+}
+#botaomenu:hover{
+	-fx-background-color: #990000;
 }

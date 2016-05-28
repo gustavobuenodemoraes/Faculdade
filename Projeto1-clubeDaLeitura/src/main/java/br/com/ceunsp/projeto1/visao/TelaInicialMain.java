@@ -7,18 +7,19 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class DevolucaoMain extends Application{
+public class TelaInicialMain extends Application {
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/Devolucao.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("fxml/TelaInicial.fxml"));
 			
-			Scene scene = new Scene(root, 420, 250);
+			Scene scene = new Scene(root, 600, 400);
 			scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
 			
-			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imagens/devolucaored.png")));//imagem
+			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imagens/home-icon-silhouette.png")));//imagem
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Devolucao de revistas");
+			primaryStage.setTitle("Home");
 			primaryStage.setMaximized(false);
 			primaryStage.setResizable(false);
 			primaryStage.show();
