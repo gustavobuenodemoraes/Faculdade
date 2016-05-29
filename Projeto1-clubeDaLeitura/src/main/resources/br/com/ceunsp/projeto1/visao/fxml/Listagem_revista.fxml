@@ -39,10 +39,10 @@
 	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
 		GridPane.rowIndex="3">
 		
-		<Button fx:id="btnNovo" onAction="#novo" id="btnCrud" text="Novo"/>
-		<Button fx:id="btnEditar" onAction="#editar" id="btnCrud" text="Editar" />
-		<Button fx:id="btnExcluir" onAction="#excluir" id="btnCrud" text="Excluir" />
-		<Button fx:id="btnExcluir" onAction="#atualizar" id="btnCrud" text="Atualizar" />
+		<Button onAction="#novo" id="btnCrud" text="Novo"/>
+		<Button onAction="#editar" id="btnCrud" text="Editar" />
+		<Button onAction="#excluir" id="btnCrud" text="Excluir" />
+		<Button onAction="#atualizar" id="btnCrud" text="Atualizar" />
 	</HBox>
 
 </GridPane>
