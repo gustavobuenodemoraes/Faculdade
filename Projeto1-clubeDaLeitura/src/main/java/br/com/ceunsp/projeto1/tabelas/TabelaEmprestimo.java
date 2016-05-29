@@ -1,8 +1,10 @@
 package br.com.ceunsp.projeto1.tabelas;
 
+import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class TabelaEmprestimo {
+	private final SimpleLongProperty id;
 	private final SimpleStringProperty amiguinho;
 	private final SimpleStringProperty revista;
 	private final SimpleStringProperty dtEmprestimo;
@@ -10,9 +12,10 @@ public class TabelaEmprestimo {
 	private final SimpleStringProperty dtDevolucaoFinal;
 	private final SimpleStringProperty status;
 
-	public TabelaEmprestimo(String amiguinho, String revista, String dtEmprestimo, String dtDevolucao,
+	public TabelaEmprestimo(Long id, String amiguinho, String revista, String dtEmprestimo, String dtDevolucao,
 			String dtDevolucaoFinal, String status) {
 		super();
+		this.id = new SimpleLongProperty(id);
 		this.amiguinho = new SimpleStringProperty(amiguinho);
 		this.revista = new SimpleStringProperty(revista);
 		this.dtEmprestimo = new SimpleStringProperty(dtEmprestimo);
@@ -44,7 +47,9 @@ public class TabelaEmprestimo {
 	public String getStatus() {
 		return status.getValue();
 	}
-
+	public Long getId(){
+		return id.getValue();
+	}
 	
 
 }

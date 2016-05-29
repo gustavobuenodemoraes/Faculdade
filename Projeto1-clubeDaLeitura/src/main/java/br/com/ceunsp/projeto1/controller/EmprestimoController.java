@@ -78,6 +78,7 @@ public class EmprestimoController {
 			dao.merge(emprestimo);
 			
 			AlertHelper.InfoAlert("Salvo", "Salvo com sucesso!");
+			limparCampos();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 			AlertHelper.ErrorAlert("Ops! Ocorreu um erro", "Erro ao salvar emprestimo");

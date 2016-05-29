@@ -28,7 +28,7 @@ public class ListagemEmprestimoController {
 	@FXML
 	private TableColumn<TabelaEmprestimo, String> dtDevolucaoFinal;
 
-	private List<Emprestimo> emprestimos = getRevistas();
+	private List<Emprestimo> emprestimos = getEmprestimos();
 
 	private ObservableList<TabelaEmprestimo> list = FXCollections.observableArrayList();
 
@@ -49,7 +49,7 @@ public class ListagemEmprestimoController {
 			}else{
 				dtDevolucaoFinal = emprestimo.getDataDevolucaoFinal().toString();
 			}
-			TabelaEmprestimo tabelaRevistas = new TabelaEmprestimo(emprestimo.getAmiguinho().getNome(),
+			TabelaEmprestimo tabelaRevistas = new TabelaEmprestimo(emprestimo.getId(), emprestimo.getAmiguinho().getNome(),
 					emprestimo.getRevista().getColecao(), emprestimo.getDataEmprestimo().toString(),
 					emprestimo.getDataDevolucao().toString(), dtDevolucaoFinal,status );
 			list.add(tabelaRevistas);
@@ -66,7 +66,7 @@ public class ListagemEmprestimoController {
 		tabela.setItems(list);
 	}
 
-	public List<Emprestimo> getRevistas() {
+	public List<Emprestimo> getEmprestimos() {
 		try {
 			EmprestimoDAO dao = new EmprestimoDAO();
 			return dao.listar();

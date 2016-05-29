@@ -11,6 +11,8 @@
 <?import br.com.ceunsp.projeto1.validation.AnoTextFild?>
 <?import br.com.ceunsp.projeto1.validation.NumberTextFild?>
 <?import br.com.ceunsp.projeto1.validation.AnoTextFild?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 
 <GridPane fx:controller="br.com.ceunsp.projeto1.controller.DevolucaoController"
 	xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10"
@@ -22,14 +24,24 @@
 	<Label id="titulo" text="Devolucao de Revistas"
 		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
 
-	<Label text="Pendências: " GridPane.columnIndex="0"
-		GridPane.rowIndex="3" />
-	<ComboBox fx:id="cbPendencias" GridPane.columnIndex="1"
-		GridPane.rowIndex="3">
-	</ComboBox>
+	<TableView  fx:id="tabela" id="tabelaDevolucao" GridPane.rowIndex="1" 
+		GridPane.columnIndex="0" GridPane.columnSpan="2" editable="false" >
+		<columns>
+			<TableColumn  fx:id="amiguinho" text="Amiguinho">
+			</TableColumn>
+			<TableColumn fx:id="revista" text="Revista">
+			</TableColumn>
+			<TableColumn fx:id="status" text="Status">
+			</TableColumn>
+			<TableColumn fx:id="dtEmprestimo" text="Data de emprestimo">
+			</TableColumn>
+			<TableColumn fx:id="dtDevolucao" text="devolução prevista">
+			</TableColumn>
+		</columns>
+	</TableView>
 
 	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
-		GridPane.columnSpan="2" GridPane.rowIndex="9">
+		GridPane.columnSpan="2" GridPane.rowIndex="4">
 		<Button text="Devolver" onAction="#devolver"  />
 	</HBox>
 </GridPane>

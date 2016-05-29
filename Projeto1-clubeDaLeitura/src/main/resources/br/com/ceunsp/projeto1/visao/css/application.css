@@ -8,6 +8,10 @@
 #tabelaEmprestimo{
 	-fx-min-width: 650px;
 }
+#tabelaDevolucao{
+	-fx-min-width: 550px;
+	-fx-min-height: 250px;
+}
 #titulo{
 	-fx-padding: 0px,0px,0px,0px;
 	-fx-font-size: 26px; 
