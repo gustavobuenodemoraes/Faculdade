@@ -20,14 +20,18 @@
 	<padding>
 		<Insets top="25" right="25" bottom="10" left="25" />
 	</padding>
-															
+
 	<Label id="titulo" text="Devolucao de Revistas"
 		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
 
-	<TableView  fx:id="tabela" id="tabelaDevolucao" GridPane.rowIndex="1" 
-		GridPane.columnIndex="0" GridPane.columnSpan="2" editable="false" >
+	<TextField fx:id="tfPesquisar" GridPane.rowIndex="1"
+		GridPane.columnSpan="2" promptText="Pesquisar" />
+
+	<TableView fx:id="tabela" id="tabelaDevolucao"
+		GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2"
+		editable="false">
 		<columns>
-			<TableColumn  fx:id="amiguinho" text="Amiguinho">
+			<TableColumn fx:id="amiguinho" text="Amiguinho">
 			</TableColumn>
 			<TableColumn fx:id="revista" text="Revista">
 			</TableColumn>
@@ -42,7 +46,7 @@
 
 	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
 		GridPane.columnSpan="2" GridPane.rowIndex="4">
-		<Button text="Devolver" onAction="#devolver"  />
+		<Button text="Devolver" onAction="#devolver" />
 	</HBox>
 </GridPane>
 
