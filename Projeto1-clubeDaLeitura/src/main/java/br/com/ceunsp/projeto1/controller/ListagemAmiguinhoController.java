@@ -74,7 +74,7 @@ public class ListagemAmiguinhoController {
 			ButtonType btnNao = new ButtonType("Não");
 
 			confirmar.setTitle("Confrimar");
-			confirmar.setHeaderText("Voçe tem certeza que deseja excluir a revista " + amiguinho.getNome() + " ?");
+			confirmar.setHeaderText("Voçe tem certeza que deseja excluir o amiguinho " + amiguinho.getNome() + " ?");
 			confirmar.getButtonTypes().setAll(btnSim, btnNao);
 			confirmar.showAndWait().ifPresent(b -> {
 				if (b == btnSim) {
@@ -87,7 +87,7 @@ public class ListagemAmiguinhoController {
 			});
 		} catch (RuntimeException e) {
 			e.printStackTrace();
-			AlertHelper.ErrorAlert("Ops! Ocorreu um erro", "Erro ao tentar excluir revista!");
+			AlertHelper.ErrorAlert("Ops! Ocorreu um erro", "Erro ao tentar excluir amiguinho!");
 		}
 	}
 
