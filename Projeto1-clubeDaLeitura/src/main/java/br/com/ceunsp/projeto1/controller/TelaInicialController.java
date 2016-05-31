@@ -1,10 +1,11 @@
 package br.com.ceunsp.projeto1.controller;
 
-import javafx.fxml.FXML;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 
+import org.hibernate.Session;
+
+import br.com.ceunsp.projeto1.util.AlertHelper;
+import br.com.ceunsp.projeto1.util.HibernateUtil;
 import br.com.ceunsp.projeto1.visao.CadastroAmiguinhoMain;
 import br.com.ceunsp.projeto1.visao.CadastroCaixaMain;
 import br.com.ceunsp.projeto1.visao.CadastroRevistaMain;
@@ -15,9 +16,24 @@ import br.com.ceunsp.projeto1.visao.ListagemCaixaMain;
 import br.com.ceunsp.projeto1.visao.ListagemEmprestimoMain;
 import br.com.ceunsp.projeto1.visao.ListagemRevistaMain;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.stage.Stage;
 
 public class TelaInicialController {
 	Stage primaryStage = new Stage();
+	
+	@FXML
+	public void initialize() {
+		
+		//fazer conexão com o banco quando abrir a aplicação pra nã odemorar para carregar
+		try{
+			Session session =  HibernateUtil.getSessionFactory().openSession();
+			session.close();
+		}catch(RuntimeException e){
+			e.printStackTrace();
+			AlertHelper.ErrorAlert("Erro", "Erro ao conectar com o banco!");
+		}
+	}
 
 	@FXML
 	public void cadastrarAm(ActionEvent event) throws IOException {
@@ -72,4 +88,5 @@ public class TelaInicialController {
 		DevolucaoMain devolucao = new DevolucaoMain();
 		devolucao.start(primaryStage);
 	}
+	
 }
