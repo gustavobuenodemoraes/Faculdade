@@ -13,7 +13,7 @@ public class ListaAmiguinhoMain extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("fxml/Lista_amiguinho.fxml"));
 			
-			Scene scene = new Scene(root, 500, 350);
+			Scene scene = new Scene(root, 500, 400);
 			scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
 			
 			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imagens/listaamiguinhored.png")));//imagem

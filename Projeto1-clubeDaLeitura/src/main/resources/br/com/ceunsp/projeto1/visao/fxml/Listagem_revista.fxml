@@ -20,7 +20,7 @@
 	<Label id="titulo" text="Revistas" GridPane.columnIndex="0"
 		GridPane.rowIndex="0" GridPane.columnSpan="2" />
 
-	<TextField fx:id="tfPesquisar" GridPane.rowIndex="1" GridPane.columnSpan="2" promptText="Pesquisar"/>
+	<TextField  fx:id="tfPesquisar" GridPane.rowIndex="1" GridPane.columnSpan="2" promptText="Pesquisar"/>
 	
 	<TableView fx:id="tabela" id="tabela" GridPane.rowIndex="2"
 		GridPane.columnIndex="0" GridPane.columnSpan="2" editable="false">
@@ -36,10 +36,10 @@
 		</columns>
 	</TableView>
 
-	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
+	<HBox  id="button" alignment="bottom_center" GridPane.columnIndex="0"
 		GridPane.rowIndex="3">
 		
-		<Button onAction="#novo" id="btnCrud" text="Novo"/>
+		<Button  onAction="#novo" id="btnCrud" text="Novo"/>
 		<Button onAction="#editar" id="btnCrud" text="Editar" />
 		<Button onAction="#excluir" id="btnCrud" text="Excluir" />
 		<Button onAction="#atualizar" id="btnCrud" text="Atualizar" />

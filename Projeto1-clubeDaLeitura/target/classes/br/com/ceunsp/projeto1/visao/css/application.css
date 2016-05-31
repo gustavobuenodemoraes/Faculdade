@@ -90,10 +90,12 @@
 }
 .menu:hover{
 	-fx-background-color: #800000;
+	
 }
 
 #menuitem:hover{
 	-fx-background-color: #800000;
+	
 }
 #botaomenu{
 	-fx-min-width: 40.0px;

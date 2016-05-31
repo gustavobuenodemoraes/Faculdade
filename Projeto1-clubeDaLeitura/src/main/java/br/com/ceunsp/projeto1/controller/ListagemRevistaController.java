@@ -97,8 +97,8 @@ public class ListagemRevistaController {
 			confirmar.showAndWait().ifPresent(b -> {
 				if (b == btnSim) {
 					dao.delete(revista);
-					atualizar();
 					AlertHelper.InfoAlert("Deletado", "Excluido com sucesso!");
+					atualizar();
 				}else{
 					confirmar.close();
 				}

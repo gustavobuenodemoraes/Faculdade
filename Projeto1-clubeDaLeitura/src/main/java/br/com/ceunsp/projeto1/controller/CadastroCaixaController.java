@@ -29,16 +29,44 @@ public class CadastroCaixaController {
 				return;
 			}
 
-			Caixa caixa = new Caixa();
-			caixa.setCor(tfCorcaixa.getText());
-			caixa.setEtiqueta(tfEtiquetaCaixa.getText());
-			//converte para long, pois estava vindo como String
-			caixa.setNumero(Long.parseLong(tfNumeroCaixa.getText()));
-			CaixaDAO dao = new CaixaDAO();
-			dao.merge(caixa);
+			if (caixa == null) {
+				Caixa caixa = new Caixa();
+				caixa.setCor(tfCorcaixa.getText());
+				caixa.setEtiqueta(tfEtiquetaCaixa.getText());
+				// converte para long, pois estava vindo como String
+				caixa.setNumero(Long.parseLong(tfNumeroCaixa.getText()));
+				CaixaDAO dao = new CaixaDAO();
+				dao.merge(caixa);
+				AlertHelper.InfoAlert("salvo", "Salvo com sucesso!");
+				limparCampos();
+			} else {
+				caixa.setCor(tfCorcaixa.getText());
+				caixa.setEtiqueta(tfEtiquetaCaixa.getText());
+				// converte para long, pois estava vindo como String
+				caixa.setNumero(Long.parseLong(tfNumeroCaixa.getText()));
+				CaixaDAO dao = new CaixaDAO();
+				dao.merge(caixa);
+				AlertHelper.InfoAlert("salvo", "Salvo com sucesso!");
+				limparCampos();
+			}
+
 		} catch (RuntimeException e) {
 			AlertHelper.ErrorAlert("Ops! ocorreu um erro", "Erro ao tentar salvar!");
 			e.printStackTrace();
 		}
+	}
+
+	public void setCaixa(Caixa caixa) {
+		this.caixa = caixa;
+		tfCorcaixa.setText(caixa.getCor());
+		tfEtiquetaCaixa.setText(caixa.getEtiqueta());
+		tfNumeroCaixa.setText(caixa.getNumero().toString());
+
+	}
+
+	public void limparCampos() {
+		tfCorcaixa.setText("");
+		tfEtiquetaCaixa.setText("");
+		tfNumeroCaixa.setText("");
 	}
 }
