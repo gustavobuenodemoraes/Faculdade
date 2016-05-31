@@ -60,7 +60,7 @@
 		</ImageView>
 		<MenuBar id="menubar" GridPane.valignment="TOP">
 			<menus>
-				<Menu mnemonicParsing="false" text="Cadastro">
+				<Menu id="menu" mnemonicParsing="false" text="Cadastro">
 					<items>
 						<MenuItem id="menuitem" mnemonicParsing="false" onAction="#cadastrarAm"
 							text="Cadastro de Amiguinho">
@@ -105,7 +105,7 @@
 						</ImageView>
 					</graphic>
 				</Menu>
-				<Menu mnemonicParsing="false" text="Lista">
+				<Menu id="menu" mnemonicParsing="false" text="Lista">
 					<items>
 						<MenuItem id="menuitem" mnemonicParsing="false" onAction="#listAmiguinho"
 							text="Lista de Amiguinho">
@@ -161,7 +161,7 @@
 						</ImageView>
 					</graphic>
 				</Menu>
-				<Menu mnemonicParsing="false" text="Emprestimo">
+				<Menu id="menu" mnemonicParsing="false" text="Emprestimo">
 					<items>
 						<MenuItem id="menuitem" mnemonicParsing="false" onAction="#emprestimo"
 							text="Emprestimo de Revista">
@@ -184,7 +184,7 @@
 						</ImageView>
 					</graphic>
 				</Menu>
-				<Menu mnemonicParsing="false" text="Devolução">
+				<Menu id="menu" mnemonicParsing="false" text="Devolução">
 					<items>
 						<MenuItem id="menuitem" mnemonicParsing="false" onAction="#devolucao"
 							text="Devolução">

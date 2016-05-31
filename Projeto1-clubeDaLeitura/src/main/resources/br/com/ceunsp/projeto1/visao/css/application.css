@@ -92,11 +92,18 @@
 	-fx-background-color: #800000;
 	
 }
+.menu-item:focused{
+	-fx-background-color: #800000;
+}
+.menu-item:focused .label{
+	-fx-text-fill: #fff;
+}
 
 #menuitem:hover{
 	-fx-background-color: #800000;
 	
 }
+
 #botaomenu{
 	-fx-min-width: 40.0px;
 	-fx-min-height: 26.0px;
