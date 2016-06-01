@@ -6,19 +6,27 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 
-<GridPane fx:controller="br.com.ceunsp.projeto1.controller.ListagemAmiguinhoController"
+<GridPane
+	fx:controller="br.com.ceunsp.projeto1.controller.ListagemAmiguinhoController"
 	xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10"
 	vgap="10">
 	<padding>
 		<Insets top="25" right="25" bottom="10" left="25" />
 	</padding>
 
-	<Label id="titulo" text="Lista de Amiguinhos"
-		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+	<Label id="titulo" GridPane.columnIndex="0" text="Lista de Amiguinhos"
+		GridPane.rowIndex="0" GridPane.columnSpan="2" />
 
-	<TableView fx:id="tabela" id="tabelaamiguinho" GridPane.rowIndex="1" 
-		GridPane.columnIndex="0" GridPane.columnSpan="2" editable="false" >
+	<TextField fx:id="tfPesquisar" GridPane.rowIndex="1"
+		GridPane.columnSpan="2" promptText="Pesquisar" />
+
+	<TableView fx:id="tabela" id="tabelaamiguinho"
+		GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2"
+		editable="false">
 		<columns>
 			<TableColumn fx:id="nome" text="Nome">
 			</TableColumn>
@@ -30,4 +38,13 @@
 			</TableColumn>
 		</columns>
 	</TableView>
+
+	<HBox id="button" alignment="bottom_center" GridPane.columnIndex="0"
+		GridPane.rowIndex="3">
+
+		<Button onAction="#novo" id="btnCrud" text="Novo" />
+		<Button onAction="#editar" id="btnCrud" text="Editar" />
+		<Button onAction="#excluir" id="btnCrud" text="Excluir" />
+		<Button onAction="#atualizar" id="btnCrud" text="Atualizar" />
+	</HBox>
 </GridPane>

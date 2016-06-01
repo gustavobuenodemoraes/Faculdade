@@ -12,7 +12,7 @@ public class ListagemEmprestimoMain extends Application{
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("fxml/Listagem_emprestimo.fxml"));
 			
-			Scene scene = new Scene(root, 650, 350);
+			Scene scene = new Scene(root, 700, 550);
 			scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Listagem de revistas");

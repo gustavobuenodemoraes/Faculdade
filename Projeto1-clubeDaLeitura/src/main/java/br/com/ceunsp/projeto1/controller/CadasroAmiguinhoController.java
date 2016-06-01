@@ -33,21 +33,57 @@ public class CadasroAmiguinhoController {
 				return;
 			}
 
-			amiguinho = new Amiguinho();
-			amiguinho.setNome(tfNome.getText());
-			amiguinho.setNomeMae(tfNomeMae.getText());
-			amiguinho.setTelefone(tfTelefone.getText());
-			if (toggle.getSelectedToggle() == rbPredio) {
-				amiguinho.setLocal('p');
-			} else if (toggle.getSelectedToggle() == rbEscola) {
-				amiguinho.setLocal('e');
+			if(amiguinho == null){
+				amiguinho = new Amiguinho();
+				amiguinho.setNome(tfNome.getText());
+				amiguinho.setNomeMae(tfNomeMae.getText());
+				amiguinho.setTelefone(tfTelefone.getText());
+				if (toggle.getSelectedToggle() == rbPredio) {
+					amiguinho.setLocal('p');
+				} else if (toggle.getSelectedToggle() == rbEscola) {
+					amiguinho.setLocal('e');
 
+				}
+			}else{
+				amiguinho.setNome(tfNome.getText());
+				amiguinho.setNomeMae(tfNomeMae.getText());
+				amiguinho.setTelefone(tfTelefone.getText());
+				if (toggle.getSelectedToggle() == rbPredio) {
+					amiguinho.setLocal('p');
+				} else if (toggle.getSelectedToggle() == rbEscola) {
+					amiguinho.setLocal('e');
+
+				}
 			}
+		
 			AmiguinhoDAO dao = new AmiguinhoDAO();
 			dao.merge(amiguinho);
+			AlertHelper.InfoAlert("Salvo", "Amiguinho salvo com sucesso!");
+			limparCampos();
 		} catch (RuntimeException e) {
 			AlertHelper.ErrorAlert("Ops! ocorreu um erro", "Erro ao tentar salvar!");
 			e.printStackTrace();
 		}
+	}
+
+	public void setAmiguinho(Amiguinho amiguinho) {
+		this.amiguinho = amiguinho;
+		tfNome.setText(amiguinho.getNome());
+		tfNomeMae.setText(amiguinho.getNomeMae());
+		tfTelefone.setText(amiguinho.getTelefone());
+		if (amiguinho.getLocal().equals('p')) {
+			rbPredio.setSelected(true);
+		} else if (amiguinho.getLocal().equals('e')) {
+			rbEscola.setSelected(true);
+
+		}
+
+	}
+
+	public void limparCampos() {
+		tfNome.setText("");
+		tfNomeMae.setText("");
+		tfTelefone.setText("");
+		toggle.selectToggle(null);
 	}
 }

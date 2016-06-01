@@ -8,6 +8,10 @@
 #tabelaEmprestimo{
 	-fx-min-width: 650px;
 }
+#tabelaDevolucao{
+	-fx-min-width: 550px;
+	-fx-min-height: 250px;
+}
 #titulo{
 	-fx-padding: 0px,0px,0px,0px;
 	-fx-font-size: 26px; 
@@ -86,11 +90,20 @@
 }
 .menu:hover{
 	-fx-background-color: #800000;
+	
+}
+.menu-item:focused{
+	-fx-background-color: #800000;
+}
+.menu-item:focused .label{
+	-fx-text-fill: #fff;
 }
 
 #menuitem:hover{
 	-fx-background-color: #800000;
+	
 }
+
 #botaomenu{
 	-fx-min-width: 40.0px;
 	-fx-min-height: 26.0px;

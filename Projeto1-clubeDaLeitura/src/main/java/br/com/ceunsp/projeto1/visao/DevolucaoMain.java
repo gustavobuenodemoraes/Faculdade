@@ -13,7 +13,7 @@ public class DevolucaoMain extends Application{
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("fxml/Devolucao.fxml"));
 			
-			Scene scene = new Scene(root, 420, 250);
+			Scene scene = new Scene(root, 600, 500);
 			scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
 			
 			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imagens/devolucaored.png")));//imagem
