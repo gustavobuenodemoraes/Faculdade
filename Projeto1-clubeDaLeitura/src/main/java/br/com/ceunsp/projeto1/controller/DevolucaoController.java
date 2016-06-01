@@ -45,9 +45,15 @@ public class DevolucaoController {
 	public void devolver() {
 
 		try {
+			TabelaEmprestimo emprestimoTb = tabela.getSelectionModel().getSelectedItem();
+			
+			if(emprestimoTb == null){
+				AlertHelper.ErrorAlert("Não selecionado", "Selecione um emprestimo para devolver! ");
+				return;
+			}
+
 
 			EmprestimoDAO dao = new EmprestimoDAO();
-			TabelaEmprestimo emprestimoTb = tabela.getSelectionModel().getSelectedItem();
 			Emprestimo emprestimo = dao.findById(emprestimoTb.getId());
 			emprestimo.setEntregue(true);
 

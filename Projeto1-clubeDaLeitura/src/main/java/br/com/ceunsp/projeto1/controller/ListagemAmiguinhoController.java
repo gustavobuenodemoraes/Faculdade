@@ -62,7 +62,7 @@ public class ListagemAmiguinhoController {
 			TabelaAmiguinho tbAmiguinho = tabela.getSelectionModel().getSelectedItem();
 
 			if (tbAmiguinho == null) {
-				AlertHelper.InfoAlert("Selecione uma revista", "Por favor selecione uma revsta para excluir");
+				AlertHelper.InfoAlert("Selecione um amiguinho", "Por favor selecione um amiguinho para excluir");
 				return;
 			}
 
@@ -74,7 +74,7 @@ public class ListagemAmiguinhoController {
 			ButtonType btnNao = new ButtonType("Não");
 
 			confirmar.setTitle("Confrimar");
-			confirmar.setHeaderText("Voçe tem certeza que deseja excluir o amiguinho " + amiguinho.getNome() + " ?");
+			confirmar.setHeaderText("Você tem certeza que deseja excluir o amiguinho " + amiguinho.getNome() + " ?");
 			confirmar.getButtonTypes().setAll(btnSim, btnNao);
 			confirmar.showAndWait().ifPresent(b -> {
 				if (b == btnSim) {
@@ -97,7 +97,7 @@ public class ListagemAmiguinhoController {
 		try {
 			TabelaAmiguinho tbAmiguinho = tabela.getSelectionModel().getSelectedItem();
 			if (tbAmiguinho == null) {
-				AlertHelper.InfoAlert("Selecione uma revista", "Por favor selecione uma revsta para excluir");
+				AlertHelper.InfoAlert("Selecione um amiguinho", "Por favor selecione um amiguinho para excluir");
 				return;
 			}
 
@@ -108,7 +108,7 @@ public class ListagemAmiguinhoController {
 			cam.abrirCadastroAmiguinho(amiguinho);
 		} catch (RuntimeException e) {
 			e.printStackTrace();
-			AlertHelper.ErrorAlert("Ops! Ocorreu um erro", "Erro ao tentar editar revista!");
+			AlertHelper.ErrorAlert("Ops! Ocorreu um erro", "Erro ao tentar editar amiguinho!");
 		}
 	}
 

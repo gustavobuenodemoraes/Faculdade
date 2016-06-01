@@ -71,7 +71,7 @@ public class ListagemCaixaController {
 			crm.abrirCadastroRevista(revista);
 		} catch (RuntimeException e) {
 			e.printStackTrace();
-			AlertHelper.ErrorAlert("Ops! Ocorreu um erro", "Erro ao tentar editar revista!");
+			AlertHelper.ErrorAlert("Ops! Ocorreu um erro", "Erro ao tentar editar caixa!");
 		}
 	}
 
@@ -93,7 +93,7 @@ public class ListagemCaixaController {
 			ButtonType btnNao = new ButtonType("Não");
 
 			confirmar.setTitle("Confrimar");
-			confirmar.setHeaderText("Voçe tem certeza que deseja excluir a revista " + caixa.getEtiqueta() + " ?");
+			confirmar.setHeaderText("Você tem certeza que deseja excluir a caixa " + caixa.getEtiqueta() + " ?");
 			confirmar.getButtonTypes().setAll(btnSim, btnNao);
 			confirmar.showAndWait().ifPresent(b -> {
 				if (b == btnSim) {

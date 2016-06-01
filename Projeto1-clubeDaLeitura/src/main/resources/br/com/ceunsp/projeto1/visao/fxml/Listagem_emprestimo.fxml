@@ -6,6 +6,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 
 <GridPane fx:controller="br.com.ceunsp.projeto1.controller.ListagemEmprestimoController"
 	xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10"
@@ -17,7 +20,9 @@
 	<Label id="titulo" text="Emprestimos"
 		GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
 
-	<TableView fx:id="tabela" id="tabelaEmprestimo" GridPane.rowIndex="1" 
+	<TextField   fx:id="tfPesquisar" GridPane.rowIndex="1" GridPane.columnSpan="2" promptText="Pesquisar"/>
+
+	<TableView fx:id="tabela" id="tabelaEmprestimo" GridPane.rowIndex="2" 
 		GridPane.columnIndex="0" GridPane.columnSpan="2" editable="false" >
 		<columns>
 			<TableColumn fx:id="amiguinho" text="Amiguinho">
@@ -35,5 +40,14 @@
 			</TableColumn>
 		</columns>
 	</TableView>
+	<HBox  id="button" alignment="bottom_center" GridPane.columnIndex="0"
+		GridPane.rowIndex="4">
+		
+		<Button onAction="#novo" id="btnCrud" text="Novo"/>
+		<Button onAction="#editar" id="btnCrud" text="Editar" />
+		<Button onAction="#excluir" id="btnCrud" text="Excluir" />
+		<Button onAction="#atualizar" id="btnCrud" text="Atualizar" />
+		<Button onAction="#devolver" id="btnCrud" text="Devolver" />
+	</HBox>
 </GridPane>
 

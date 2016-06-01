@@ -92,7 +92,7 @@ public class ListagemRevistaController {
 			ButtonType btnNao = new ButtonType("Não");
 
 			confirmar.setTitle("Confrimar");
-			confirmar.setHeaderText("Voçe tem certeza que deseja excluir a revista " + revista.getColecao() + " ?");
+			confirmar.setHeaderText("Você tem certeza que deseja excluir a revista " + revista.getColecao() + " ?");
 			confirmar.getButtonTypes().setAll(btnSim, btnNao);
 			confirmar.showAndWait().ifPresent(b -> {
 				if (b == btnSim) {
@@ -114,7 +114,7 @@ public class ListagemRevistaController {
 		try {
 			TabelaRevistas tbResvista = tabela.getSelectionModel().getSelectedItem();
 			if (tbResvista == null) {
-				AlertHelper.InfoAlert("Selecione uma revista", "Por favor selecione uma revsta para excluir");
+				AlertHelper.InfoAlert("Selecione uma revista", "Por favor selecione uma revista para excluir");
 				return;
 			}
 
