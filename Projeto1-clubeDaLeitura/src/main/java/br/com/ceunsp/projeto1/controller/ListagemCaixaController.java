@@ -106,7 +106,9 @@ public class ListagemCaixaController {
 			});
 		} catch (RuntimeException e) {
 			e.printStackTrace();
-			AlertHelper.ErrorAlert("Ops! Ocorreu um erro", "Erro ao tentar excluir caixa!");
+			AlertHelper.ErrorAlert("Ops! Ocorreu um erro",
+					"Erro ao tentar excluir caixa! Verifique se existe revistas na caixa!",
+					"Mude as revista dessa caixa para outra antes de tentar excluir");
 		}
 	}
 

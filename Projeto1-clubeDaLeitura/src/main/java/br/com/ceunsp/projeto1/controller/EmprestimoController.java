@@ -54,6 +54,7 @@ public class EmprestimoController {
 		try {
 			EmprestimoDAO dao = new EmprestimoDAO();
 
+			// novo emprestimo
 			if (emprestimo == null) {
 				emprestimo = new Emprestimo();
 
@@ -76,6 +77,13 @@ public class EmprestimoController {
 				// pega a data atual
 				dtEmprestimo.getTime();
 
+				if (dtDevolucao.getTime() < dtEmprestimo.getTime()) {
+					AlertHelper.ErrorAlert("Erro ",
+							"A data de devolução não pode ser menor que a data de emprestimo! ");
+					emprestimo = null;//para não ir pro editar na proxima tentativa
+					return;
+				}
+
 				emprestimo.setDataDevolucao(dtDevolucao);
 				emprestimo.setDataEmprestimo(dtEmprestimo);
 				emprestimo.setEntregue(false);
@@ -83,12 +91,21 @@ public class EmprestimoController {
 				emprestimo.setRevista(cbRevista.getValue());
 
 				dao.merge(emprestimo);
-			} else {
+			}
+			// editar emprestimo
+			else {
 				// converter data
 				LocalDate ld = dtDevolucao.getValue();
 				Instant instant = ld.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant();
 				Date dtDevolucao = Date.from(instant);
 
+				if (dtDevolucao.getTime() < emprestimo.getDataEmprestimo().getTime()) {
+					AlertHelper.ErrorAlert("Erro ",
+							"A data de devolução não pode ser menor que a data de emprestimo! ");
+					return;
+					
+				}
+				
 				emprestimo.setDataDevolucao(dtDevolucao);
 				emprestimo.setAmiguinho(cbAmiguinho.getValue());
 				emprestimo.setRevista(cbRevista.getValue());

@@ -1,10 +1,9 @@
 package br.com.ceunsp.projeto1.controller;
 
-import br.com.ceunsp.projeto1.validation.NumberTextFild;
-
 import br.com.ceunsp.projeto1.dao.CaixaDAO;
 import br.com.ceunsp.projeto1.modelo.Caixa;
 import br.com.ceunsp.projeto1.util.AlertHelper;
+import br.com.ceunsp.projeto1.validation.NumberTextFild;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -35,6 +34,11 @@ public class CadastroCaixaController {
 				caixa.setEtiqueta(tfEtiquetaCaixa.getText());
 				// converte para long, pois estava vindo como String
 				caixa.setNumero(Long.parseLong(tfNumeroCaixa.getText()));
+
+				if(verificaSeExisteCaixa(caixa)){
+					AlertHelper.ErrorAlert("Já existe", "A caixa com o numero "+ caixa.getNumero()+ " já existe!");
+					return;
+				}
 				CaixaDAO dao = new CaixaDAO();
 				dao.merge(caixa);
 				AlertHelper.InfoAlert("salvo", "Salvo com sucesso!");
@@ -44,6 +48,11 @@ public class CadastroCaixaController {
 				caixa.setEtiqueta(tfEtiquetaCaixa.getText());
 				// converte para long, pois estava vindo como String
 				caixa.setNumero(Long.parseLong(tfNumeroCaixa.getText()));
+
+				if(verificaSeExisteCaixa(caixa)){
+					AlertHelper.ErrorAlert("Já existe", "A caixa com o numero "+ caixa.getNumero()+ " já existe!");
+					return;
+				}
 				CaixaDAO dao = new CaixaDAO();
 				dao.merge(caixa);
 				AlertHelper.InfoAlert("salvo", "Salvo com sucesso!");
@@ -68,5 +77,14 @@ public class CadastroCaixaController {
 		tfCorcaixa.setText("");
 		tfEtiquetaCaixa.setText("");
 		tfNumeroCaixa.setText("");
+	}
+	public boolean verificaSeExisteCaixa(Caixa caixa){
+		CaixaDAO dao = new CaixaDAO();
+		Caixa caixaResult = dao.findById(caixa.getNumero());
+		if(caixaResult  == null){
+			return false;
+		}else{
+			return true;
+		}
 	}
 }
